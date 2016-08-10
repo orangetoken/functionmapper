@@ -20,10 +20,10 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
     switch(connectionType)
     {
         case "1":
-            value = "E";
+            value = "ELECTRICITY";
             break;
         case "2":
-            value = "G";
+            value = "GAS";
             break;
         default:
             break;
