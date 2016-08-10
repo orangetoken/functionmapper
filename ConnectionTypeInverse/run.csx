@@ -5,7 +5,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
     log.Info($"C# HTTP trigger function processed a request. RequestUri={req.RequestUri}");
 
     // parse query parameter
-    int connectionType = req.GetQueryNameValuePairs()
+    string connectionType = req.GetQueryNameValuePairs()
         .FirstOrDefault(q => string.Compare(q.Key, "connectionType", true) == 0)
         .Value;
 
@@ -19,10 +19,10 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
     
     switch(connectionType)
     {
-        case 1:
+        case "1":
             value = "E";
             break;
-        case 2:
+        case "2":
             value = "G";
             break;
         default:
